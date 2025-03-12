@@ -19,11 +19,11 @@ export default function Nav({ setMobileToggle }) {
           Blog
         </Link>
       </li>
-      <li className="">
+      {/* <li className="">
         <Link to="team" onClick={() => setMobileToggle(false)}>
           Our Team
         </Link>
-      </li>
+      </li> */}
      
     </ul>
   );
