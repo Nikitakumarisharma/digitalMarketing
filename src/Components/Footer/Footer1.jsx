@@ -10,7 +10,7 @@ const Footer1 = () => {
 
     return (
         <div>
-             <section className="cta-section section-bg section-padding pb-0">
+             <section className="cta-section section-bg  pb-0">
             <div className="rokect-shape float-bob-y">
                 <img src="/assets/img/rokect.png" alt="img" />
             </div>

@@ -10,7 +10,8 @@ import SuccessStories from "../Components/SuccessStories/SuccessStories";
 import Testimonial1 from "../Components/Testimonial/Testimonial1";
 // import WhatWeDo from "../Components/WhatWeDo/WhatWeDo";
 import WhyChoose1 from "../Components/WhyChoose/WhyChoose1";
-import Client from "../Components/Brand/Brand1"
+import Client from "../Components/Brand/Brand1";
+// import ChatBot from "../Components/chatbot";
 // import Team1 from "../Components/Team/Team1"
 
 const Home = () => {
@@ -30,6 +31,7 @@ const Home = () => {
             <ContactInfo1></ContactInfo1>
             <Blog1></Blog1>
             <Client />
+            {/* <ChatBot/> */}
         </div>
     );
 };

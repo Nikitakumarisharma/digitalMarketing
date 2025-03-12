@@ -21,7 +21,7 @@ const ContactInfo1 = () => {
                    <div className="col-xl-6">
                            <div className="contact-map">
                             <h3 className="px-4">Contact Us</h3>
-                           <iframe width="500" height="200" src="https://crm.cmtai.cloud/forms/wtl/10722ba8db4b4abc95726faf62d04f4e" frameborder="0" sandbox="allow-top-navigation allow-forms allow-scripts allow-same-origin allow-popups" ></iframe>
+                           <iframe width="500" height="200" src="https://crm.cmtai.cloud/forms/wtl/10722ba8db4b4abc95726faf62d04f4e" sandbox="allow-top-navigation allow-forms allow-scripts allow-same-origin allow-popups" ></iframe>
           
                                
                             </div>

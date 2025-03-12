@@ -72,7 +72,7 @@ const sliderSettings = {
 
 const Client = () => {
   return (
-    <section className="container text-center py-5 mx-auto">
+    <section className="container text-center  py-5  mb-5 mx-auto">
       <h4 className="brand-title m-3">1k + Brands Trust Us</h4>
       <hr />
     <Slider {...sliderSettings} className="customer-logos slider">

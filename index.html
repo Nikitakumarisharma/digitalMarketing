@@ -4,10 +4,43 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Digtek - Digital Marketing Agency ReactJs Template</title>
+    <title>CMT AI - Digital Marketing and PR Services</title>
   </head>
   <body>
-    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- <script src='https://www.myaibot.in/Modules/Chatbot/Resources/assets/js/chatbot-widget.min.js'  data-iframe-src="https://www.myaibot.in/chatbot/embed/chatbot_code=913a439ed9964a3/welcome" data-iframe-height="532" data-iframe-width="400"></script> -->
+
+        <!-- Chatbot Button Script -->
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const chatbotButton = document.createElement("button");
+            chatbotButton.innerHTML = "💬 Chat";
+            chatbotButton.style.position = "fixed";
+            chatbotButton.style.bottom = "20px";
+            chatbotButton.style.right = "20px";
+            chatbotButton.style.zIndex = "1000";
+            chatbotButton.style.padding = "12px 20px";
+            chatbotButton.style.backgroundColor = "green";
+            chatbotButton.style.color = "#fff";
+            chatbotButton.style.border = "none";
+            chatbotButton.style.borderRadius = "50px";
+            chatbotButton.style.cursor = "pointer";
+            chatbotButton.style.fontSize = "16px";
+            chatbotButton.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
+            chatbotButton.style.display = "flex";
+            chatbotButton.style.alignItems = "center";
+            chatbotButton.style.gap = "8px";
+    
+            chatbotButton.onclick = function () {
+              window.open(
+                "https://www.myaibot.in/chatbot/embed/chatbot_code=913a439ed9964a3/welcome",
+                "_blank"
+              );
+            };
+    
+            document.body.appendChild(chatbotButton);
+          });
+        </script>
+    <div id="root"></div>
   </body>
 </html>
