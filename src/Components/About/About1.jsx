@@ -98,7 +98,7 @@ const About1 = () => {
                             </p>
                             
                             <div className="main-button wow fadeInUp" data-wow-delay=".3s">
-                                <Link to="/"> <span className="theme-btn mt-5"> EXPLORE MORE </span></Link>
+                                <Link to="/contact"> <span className="theme-btn mt-5"> EXPLORE MORE </span></Link>
                             </div>
                         </div>
                     </div>

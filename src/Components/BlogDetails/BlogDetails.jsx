@@ -119,7 +119,7 @@ const BlogDetails = () => {
                                             </div>
                                         </div>
 
-                                        <div className="comment-form-wrap pt-5">
+                                        <div className="comment-form-wrap py-5">
                                             <h3>Connect With Us</h3>
                                             <form action="#" id="contact-form" method="POST">
                                                 <div className="row g-4">

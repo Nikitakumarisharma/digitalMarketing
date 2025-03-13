@@ -37,7 +37,7 @@ const CaseStudy1 = () => {
               </h2>
             </div>
             <div className="main-button wow fadeInUp" data-wow-delay=".5s">
-              <Link to="/">
+              <Link to="/contact">
                 {" "}
                 <span className="theme-btn"> EXPLORE MORE </span>
                
