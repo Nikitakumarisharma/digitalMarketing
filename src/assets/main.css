@@ -3398,8 +3398,14 @@ span {
 }
 
 .hero-1 {
-  padding: 190px 0 0;
+  padding: 500px 0 0;
   position: relative;
+}
+@media (max-width:450px) {
+  .hero-1 {
+    padding: 100px 0 0;
+    position: relative;
+  }
 }
 .hero-1 .mike-shape {
   position: absolute;

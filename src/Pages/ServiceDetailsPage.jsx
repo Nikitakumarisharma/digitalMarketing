@@ -1,10 +1,11 @@
-import HeroBanner4 from "../Components/HeroBanner/HeroBanner4";
+import HeroBanner5 from "../Components/HeroBanner/HeroBanner5";
+
 import ServiceDetails from "../Components/ServiceDetails/ServiceDetails";
 
 const ServiceDetailsPage = () => {
     return (
         <div>
-            <HeroBanner4></HeroBanner4>  
+            <HeroBanner5></HeroBanner5>  
             <ServiceDetails></ServiceDetails>       
         </div>
     );
