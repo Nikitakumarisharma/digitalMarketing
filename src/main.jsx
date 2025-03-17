@@ -12,7 +12,7 @@ import ReactGA from 'react-ga4';
 
 
 
-ReactGA.initialize("G-93VS7R5GE7"); // Replace with your Tracking ID
+ReactGA.initialize("G-71GZDBQL72"); // Replace with your Tracking ID
 
 ReactGA.send("pageview"); // Track initial page load
 
