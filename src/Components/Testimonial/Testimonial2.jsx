@@ -55,11 +55,11 @@ const Testimonial2 = () => {
       ]; 
 
     return (
-        <section className="testimonial-section fix section-padding pt-0 bg-cover" data-background="/assets/img/testimonial/testimonial-bg.jpg">
+        <section className="testimonial-section fix section-padding pt-0 bg-cover">
             <div className="container">
-                <div className="testimonial-wrapper-2">
-                    <div className="row g-4 align-items-center">
-                        <div className="col-lg-6">
+                <div className="testimonial-wrapper-z">
+                    <div className="row g-2 align-items-center">
+                        <div className="col-lg-9">
                             <div className="testimonial-image">
                                 <img src="/assets/img/testimonial/03.png" alt="img" className="wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.3s" />
                                 <div className="rocket-shape">
@@ -70,7 +70,7 @@ const Testimonial2 = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-6">
+                        <div className="col-lg-3">
                             <div className="testimonial-content">
                                 <div className="section-title">
                                     <div className="sub-title bg-color-2 wow fadeInUp">
@@ -81,7 +81,7 @@ const Testimonial2 = () => {
                                         Happy Clients Says?
                                     </h2>
                                 </div>
-                                <div className="swiper testimonial-slider-3">
+                                {/* <div className="swiper testimonial-slider-3">
                                     <div className="swiper-wrapper">
                                     <Slider ref={sliderRef} {...settings}>
                                     {testimonialContent.map((item, i) => (
@@ -108,11 +108,11 @@ const Testimonial2 = () => {
                                     </Slider>
 
                                     </div>
-                                </div>
-                                <div className="array-button">
+                                </div> */}
+                                {/* <div className="array-button">
                                     <button onClick={previous} className="array-prev"><i className="bi bi-arrow-up"></i></button>
                                     <button onClick={next} className="array-next"><i className="bi bi-arrow-down"></i></button>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

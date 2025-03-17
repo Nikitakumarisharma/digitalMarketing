@@ -4,9 +4,9 @@ import {
 import Home from "../Pages/Home";
 import Main from "../Layout/Main";
 import AboutPage from "../Pages/AboutPage";
-import Home2 from "../Pages/Home2";
+import Home2 from "../Pages/Pr";
 import Layout2 from "../Layout/Layout2";
-import Home3 from "../Pages/Home3";
+// import Home3 from "../Pages/Home3";
 import TeamPage from "../Pages/TeamPage";
 import TeamDetailsPage from "../Pages/TeamDetailsPage";
 import PricingPage from "../Pages/PricingPage";
@@ -54,9 +54,10 @@ export const router = createBrowserRouter([
           element: <ServicesPage></ServicesPage>,
         }, 
         {
-          path: "/service/service-details",
+          path: "/service/:id",
           element: <ServiceDetailsPage></ServiceDetailsPage>,
-        }, 
+        },
+        
         {
           path: "/project",
           element: <CaseStudyPage></CaseStudyPage>,
@@ -74,7 +75,7 @@ export const router = createBrowserRouter([
           element: <BlogPage></BlogPage>,
         }, 
         {
-          path: "/home2",
+          path: "/Pr",
           element:<Home2></Home2>,
         }, 
         {

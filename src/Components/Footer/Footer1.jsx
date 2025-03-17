@@ -69,7 +69,7 @@ const Footer1 = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/home2">
+                                        <Link to="/Pr">
                                         <i className="bi bi-arrow-right"></i>
                                             PR Services
                                         </Link>

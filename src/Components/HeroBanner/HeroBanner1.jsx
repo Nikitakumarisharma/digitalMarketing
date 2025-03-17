@@ -100,11 +100,11 @@ const HeroBanner1 = () => {
                 </div>
             </div>
         </div>
-        <VideoModal
+        {/* <VideoModal
             isTrue={toggle}
             iframeSrc={iframeSrc}
             handelClose={handelClose}        
-        ></VideoModal>        
+        ></VideoModal>         */}
     </section>
     );
 };

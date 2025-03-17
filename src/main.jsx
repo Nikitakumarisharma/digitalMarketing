@@ -8,9 +8,13 @@ import "slick-carousel/slick/slick.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './assets/main.css';
+import ReactGA from 'react-ga4';
 
 
 
+ReactGA.initialize("G-93VS7R5GE7"); // Replace with your Tracking ID
+
+ReactGA.send("pageview"); // Track initial page load
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

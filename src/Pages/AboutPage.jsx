@@ -3,7 +3,7 @@ import BreadCumb from "../Components/Common/BreadCumb";
 import Counter3 from "../Components/Counter/Counter3";
 import Team2 from "../Components/Team/Team2";
 import Testimonial3 from "../Components/Testimonial/Testimonial3";
-import Value1 from "../Components/Value/Value1";
+// import Value1 from "../Components/Value/Value1";
 
 
 const AboutPage = () => {

@@ -31,7 +31,7 @@ const Blog4 = () => {
       }, []);
 
     return (
-        <section className="news-section  fix">
+        <section className="news-section  fix section-padding">
         <div className="container">
             <div className="row g-4">
             {blogs.map((item, i) => (

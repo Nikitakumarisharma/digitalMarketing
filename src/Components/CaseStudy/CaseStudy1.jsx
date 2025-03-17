@@ -1,6 +1,13 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
+const serviceLinks = [
+  { id: "1", title: "SEO", fullTitle: "Search Engine Optimization (SEO)", description: "Improving website visibility on search engines through organic strategies." },
+  { id: "2", title: "SEM", fullTitle: "Search Engine Marketing (SEM)", description: "Running paid advertisements on search engines like Google Ads." },
+  { id: "3", title: "SMM", fullTitle: "Social Media Marketing (SMM)", description: "Promoting brands and engaging audiences on social platforms." },
+  { id: "4", title: "Influencer", fullTitle: "Influencer Marketing", description: "Collaborating with influencers to boost brand awareness." }
+];
+
 const CaseStudy1 = () => {
   useEffect(() => {
     document.querySelectorAll(".box").forEach((box) => {
@@ -54,41 +61,31 @@ const CaseStudy1 = () => {
                     <div className="post-box-items ">
                       <ul>
                         <li>
-                          <Link to="/project/project-details">
+                          <Link to="/service/service-details">
                             Web Analytics & Data Insights
                             <i className="bi bi-arrow-up-right"></i>
                           </Link>
                         </li>
-                        {/* <li>
-                          <Link to="/project/project-details">
-                            Content Marketing{" "}
-                            <i className="bi bi-arrow-up-right"></i>
-                          </Link>
-                        </li> */}
+                        
                       </ul>
                       <ul>
                         <li>
-                          <Link to="/project/project-details">
+                          <Link to="/service/service-details">
                             Email Marketing {" "}
                             <i className="bi bi-arrow-up-right "></i>
                           </Link>
                         </li>
                         <li>
-                          <Link to="/project/project-details">
+                          <Link to="/service/service-details">
                             E-commerce Marketing 
                             <i className="bi bi-arrow-up-right"></i>
                           </Link>
                         </li>
-                        {/* <li>
-                          <Link to="/project/project-details">
-                            Affiliate Marketing
-                            <i className="bi bi-arrow-up-right"></i>
-                          </Link>
-                        </li> */}
+                        
                       </ul>
                     </div>
                     <h3 className="project-title">
-                      <Link to="/project/project-details">
+                      <Link to="/service/service-details">
                         <img
                           src="/assets/img/case-studies/icon.png"
                           alt="img"
@@ -96,120 +93,35 @@ const CaseStudy1 = () => {
                         Digital Marketing
                       </Link>
                     </h3>
-                    <span className="number">01</span>
+                    <span className="number">1</span>
                   </div>
                 </div>
               </div>
 
-              <div className="col-xxl-6">
-                <div className="main-box">
-                  <div className="box wow fadeInUp ">
-                    <div className="title-items">
-                      <h3>
-                        <Link to="/project/project-details">SEO</Link>
-                      </h3>
-                      <span className="number">02</span>
-                    </div>
-                    <span className="number-hover">02</span>
-                    <div className="project-content">
-                      <h3>
-                        <Link to="/project/project-details">
-                          Search Engine Optimization (SEO)
-                        </Link>
-                      </h3>
-                      <p>
-                        Improving website visibility on search engines through
-                        organic strategies.
-                      </p>
-                      <Link
-                        href="/project/project-details"
-                        className="link-btn"
-                      >
-                        Read More <i className="bi bi-arrow-right"></i>
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div className="box bg-1 wow fadeInUp" data-wow-delay=".2s">
-                    <div className="title-items">
-                      <h3>
-                        <Link to="/project/project-details">SEM</Link>
-                      </h3>
-                      <span className="number">03</span>
-                    </div>
-                    <span className="number-hover">03</span>
-                    <div className="project-content">
-                      <h3>
-                        <Link to="/project/project-details">
-                          Search Engine Marketing (SEM)
-                        </Link>
-                      </h3>
-                      <p>
-                        Running paid advertisements on search engines like
-                        Google Ads.
-                      </p>
-                      <Link to="/project/project-details" className="link-btn">
-                        Read More <i className="bi bi-arrow-right"></i>
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div className="box bg-2 active wow fadeInUp wow"
-                    data-wow-delay=".4s"
-                  >
-                    <div className="title-items">
-                      <h3>
-                        <Link to="/project/project-details">SMM</Link>
-                      </h3>
-                      <span className="number">04</span>
-                    </div>
-                    <span className="number-hover">04</span>
-                    <div className="project-content">
-                      <h3>
-                        <Link to="/project/project-details">
-                          Social Media Marketing (SMM)
-                        </Link>
-                      </h3>
-                      <p>
-                        Promoting brands and engaging audiences on social
-                        platforms.
-                      </p>
-                      <Link to="/project/project-details" className="link-btn">
-                        Read More <i className="bi bi-arrow-right"></i>
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div className="box bg-3 wow fadeInUp wow"
-                    data-wow-delay=".6s"
-                  >
-                    <div className="title-items">
-                      <h3>
-                        <Link to="/project/project-details">
-                          
-Influencer
-                        </Link>
-                      </h3>
-                      <span className="number">05</span>
-                    </div>
-                    <span className="number-hover">05</span>
-                    <div className="project-content">
-                      <h3>
-                        <Link to="/project/project-details">
-                          
-Influencer Marketing
-                        </Link>
-                      </h3>
-                      <p>
-                      Collaborating with influencers to boost brand awareness
-                      </p>
-                      <Link to="/project/project-details" className="link-btn">
-                        Read More <i className="bi bi-arrow-right"></i>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div className="col-xxl-6">
+      <div className="main-box">
+        {serviceLinks.map((service, index) => (
+          <div className={`box ${index === 2 ? "active" : ""} bg-${index + 1} wow fadeInUp`} key={service.id} data-wow-delay={`${index * 0.2}s`}>
+            <div className="title-items">
+              <h3>
+                <Link to={`/service/${service.id}`}>{service.title}</Link>
+              </h3>
+              <span className="number">{index + 2}</span>
+            </div>
+            <span className="number-hover">{index + 2}</span>
+            <div className="project-content">
+              <h3>
+                <Link to={`/service/${service.id}`}>{service.fullTitle}</Link>
+              </h3>
+              <p>{service.description}</p>
+              <Link to={`/service/${service.id}`} className="link-btn">
+                Read More <i className="bi bi-arrow-right"></i>
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
             </div>
           </div>
         </div>

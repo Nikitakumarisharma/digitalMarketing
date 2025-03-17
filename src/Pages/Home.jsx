@@ -8,9 +8,11 @@ import Marquee1 from "../Components/Marquee/Marquee1";
 // import Pricing1 from "../Components/Pricing/Pricing1";
 import SuccessStories from "../Components/SuccessStories/SuccessStories";
 import Testimonial1 from "../Components/Testimonial/Testimonial1";
+// import Testimonial2 from "../Components/Testimonial/Testimonial2";
 // import WhatWeDo from "../Components/WhatWeDo/WhatWeDo";
 import WhyChoose1 from "../Components/WhyChoose/WhyChoose1";
 import Client from "../Components/Brand/Brand1";
+import Offer from "../Components/SuccessStories/Offer";
 // import ChatBot from "../Components/chatbot";
 // import Team1 from "../Components/Team/Team1"
 
@@ -21,6 +23,7 @@ const Home = () => {
             <Marquee1></Marquee1>
             <CaseStudy1></CaseStudy1>
             <Service />
+            <Offer />
             {/* <WhatWeDo></WhatWeDo> */}
             <About1></About1>
             <SuccessStories></SuccessStories>
@@ -28,6 +31,7 @@ const Home = () => {
             {/* <Team1/> */}
             {/* <Pricing1 CoulmnClass="pricing-section fix section-padding section-bg"></Pricing1> */}
             <Testimonial1></Testimonial1>
+            {/* <Testimonial2></Testimonial2> */}
             <ContactInfo1></ContactInfo1>
             <Blog1></Blog1>
             <Client />

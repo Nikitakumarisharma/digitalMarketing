@@ -15,18 +15,20 @@ const words = [
   },
   { text: "Off-Page SEO", icon: <MdScreenSearchDesktop />
   },
-  { text: "Blog Writing", icon: <TfiWrite />
-  },
-  { text: "Infographics Creation", icon: <TbBinaryTree2 />
-  },
   { text: "Technical SEO ", icon: <FaMobileScreenButton />
   },
+  { text: "Influencer Marketing", icon: <FaPeopleRobbery />
+  },
+  
+  
   { text: "Social Media Posting ", icon:<BsPostcardHeart />
 
   },
   { text: "Reels & Shorts Video Creation", icon: <FaInstagram />
   },
-  { text: "Influencer Marketing", icon: <FaPeopleRobbery />
+  { text: "Infographics Creation", icon: <TbBinaryTree2 />
+  },
+  { text: "Blog Writing", icon: <TfiWrite />
   },
   { text: "Google Search Ads", icon: <FaGoogle />
   },
@@ -41,40 +43,43 @@ const words = [
   },
   { text: "Explainer Video", icon: <GiTeacher />
   },
-  { text: "Logo Design", icon: <FaMagic />
+  { text: "Video Production", icon: <MdOutlineMissedVideoCall />
   },
   { text: "Motion Graphics", icon: <LuListVideo />
   },
-  { text: "Visting Card Design", icon: <FaIdCardAlt />
-  },
   { text: "Animation", icon: <MdAnimation />
   },
-  { text: "Video Production", icon: <MdOutlineMissedVideoCall />
+  { text: "Logo Design", icon: <FaMagic />
   },
+  { text: "Visting Card Design", icon: <FaIdCardAlt />
+  },
+  
 ];
 
 const FoodGrid = () => {
   return (
-    <div style={{ maxWidth: "1400px", margin: "auto", padding: "10px",  paddingBottom:"100px"}}>
+    <div style={{ maxWidth: "1600px", margin: "auto", padding: "10px", paddingBottom: "50px" }}>
       <div style={{ 
-        display: "grid", 
-        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", 
+        display: "flex", 
+        flexWrap: "wrap", 
         gap: "20px", 
+        justifyContent: "center", 
         textAlign: "center" 
       }}>
         {words.map((item, index) => (
           <div key={index} style={{ 
-            display: "flex", 
+            display: "inline-flex", 
             alignItems: "center", 
             justifyContent: "center", 
             padding: "15px", 
             border: "1px solid #ddd", 
-            borderRadius: "8px", 
+            borderRadius: "28px", 
             boxShadow: "2px 2px 10px rgba(0,0,0,0.1)", 
-            backgroundColor: "#fff" 
+            backgroundColor: "#fff",
+            whiteSpace: "nowrap" 
           }}>
-            <span style={{ fontSize: "24px", marginRight: "10px", color:"#6A47ED" }}>{item.icon}</span>
-            <span style={{ fontWeight: "bold" }}>{item.text}</span>
+            <span style={{ fontSize: "24px", marginRight: "10px", color: "#6A47ED" }}>{item.icon}</span>
+            <span style={{ fontWeight: "bold ",fontSize:"14px" }}>{item.text}</span>
           </div>
         ))}
       </div>

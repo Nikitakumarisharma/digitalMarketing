@@ -1,8 +1,84 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+const services = {
+    "1": {
+      title: "Search Engine Optimization (SEO)",
+      description1:
+        "At tempus aenean sapien torquent sed diam class efficitur mus morbi eros dictum quam augue ac laoreet ligula libero mi commodo nibh hac fermentum orci ad pharetra consequat justo duis turpis lorem elit dui consectetur magnis lacinia odio per placerat vestibulum volutpat mauris mollis primis imperdiet posu ere ex enim gravida cras congue.",
+      description2:
+        "Pellentesque vulputate malesuada dictumst fames interdum cursus ante tellus porta ullamcorper accumsan non eu adipiscing integer venenatis sagittis arcu curae finibus ridiculus aliquam velit lobortis senectus vitae sollicitudin sit consectetuer ultricies rutrum parturient pede nisi nascetur habitant netus quisque elementum inceptos nam felis penatibus feugiat.",
+      whatWeProvide:
+        "At tempus aenean sapien torquent sed diam class efficitur mus morbi eros dictum quam augue ac laoreet ligula libero mi commodo nibh hac fermentum orci ad pharetra consequat justo duis turpis lorem elit dui consectetur magnis lacinia odio per placerat vestibulum volutpat mauris mollis primis imperdiet posu ere ex enim gravida cras congue.",
+      challenge:
+        "At tempus aenean sapien torquent sed diam class efficitur mus morbi eros dictum quam augue ac laoreet ligula libero mi commodo nibh hac fermentum orci ad pharetra consequat justo duis turpis lorem elit dui consectetur magnis lacinia odio per placerat vestibulum volutpat mauris mollis primis imperdiet posu ere ex enim gravida cras congue.",
+      image: "/assets/img/service/details-2.jpg",
+      listItems: [
+        "Various analysis options.",
+        "Advance Data analysis operation.",
+        "Page Load (time, size, number of requests).",
+        "Advance Data analysis operation.",
+      ],
+    },
+    "2": {
+      title: "Search Engine Marketing (SEM)",
+      description1:
+        "Running paid advertisements on search engines like Google Ads to drive traffic and conversions.",
+      description2:
+        "With SEM, businesses can target specific keywords, demographics, and locations to maximize reach and effectiveness.",
+      whatWeProvide:
+        "We create, manage, and optimize search engine marketing campaigns tailored to your business needs.",
+      challenge:
+        "Managing paid advertising requires continuous optimization, keyword analysis, and bid strategy adjustments.",
+      image: "/assets/img/service/details-2.jpg",
+      listItems: [
+        "Keyword research and targeting.",
+        "Ad campaign setup and optimization.",
+        "Conversion tracking and analytics.",
+        "A/B testing and budget management.",
+      ],
+    },
+    "3": {
+      title: "Social Media Marketing (SMM)",
+      description1:
+        "Promoting brands and engaging audiences on social platforms to drive awareness and sales.",
+      description2:
+        "With social media strategies, businesses can create meaningful interactions and build brand loyalty.",
+      whatWeProvide:
+        "We develop and execute social media marketing campaigns that align with your brand's vision.",
+      challenge:
+        "Keeping up with platform algorithms, audience preferences, and content trends requires constant effort.",
+      image: "/assets/img/service/details-2.jpg",
+      listItems: [
+        "Social media content planning.",
+        "Paid ad campaigns on Facebook, Instagram, LinkedIn.",
+        "Influencer collaboration and brand promotions.",
+        "Community management and engagement analytics.",
+      ],
+    },
+    "4": {
+      title: "Influencer Marketing",
+      description1:
+        "Collaborating with influencers to boost brand awareness and reach a wider audience.",
+      description2:
+        "Influencer marketing leverages the trust and reach of popular personalities to promote your brand effectively.",
+      whatWeProvide:
+        "We connect brands with influencers that align with their industry and goals.",
+      challenge:
+        "Finding the right influencers, tracking ROI, and ensuring brand alignment can be complex.",
+      image: "/assets/img/service/details-2.jpg",
+      listItems: [
+        "Identifying the right influencers.",
+        "Campaign strategy and execution.",
+        "Performance tracking and reporting.",
+        "Audience engagement and feedback analysis.",
+      ],
+    },
+  };
+  
 
 const ServiceDetails = () => {
-
+    const { id } = useParams();
+    const service = services[id] || services["1"]; 
      const faqContent = [
             {title:'Why Is SEO Important For Small Business?', content:'Nullam faucibus eleifend mi eu varius. Integer vel tincidunt massa, quis semper odio.Mauris et mollis quam. Nullam fringilla erat id ante commodo maximus'},
             {title:'How do I choose the best SEO Agency?', content:'Nullam faucibus eleifend mi eu varius. Integer vel tincidunt massa, quis semper odio.Mauris et mollis quam. Nullam fringilla erat id ante commodo maximus'},
@@ -32,69 +108,47 @@ const ServiceDetails = () => {
         <section className="service-details-section section-padding">
             <div className="container">
                 <div className="service-details-wrapper">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="details-image">
-                                <img src="/assets/img/service/details-1.jpg" alt="img" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row g-5">
-                        <div className="col-12 col-lg-4">
-                            <div className="main-sidebar sticky-style">
-                                <div className="single-sidebar-widget">
-                                    <div className="wid-title">
-                                        <h4>All Services</h4>
-                                    </div>
-                                    <div className="service-widget-categories">
-                                        <ul>
-                                            <li><Link to="/service/service-details">Web Development</Link> <span><i className="bi bi-arrow-right"></i></span></li>
-                                            <li><Link to="/service/service-details">Content Marketing</Link> <span><i className="bi bi-arrow-right"></i></span></li>
-                                            <li className="active"><Link to="/service/service-details">Social Media Mesketing</Link><span><i className="bi bi-arrow-right"></i></span></li>
-                                            <li><Link to="/service/service-details">Affiliate Marketing</Link> <span><i className="bi bi-arrow-right"></i></span></li>
-                                            <li><Link to="/service/service-details">Search Engine Marketing (SEM)</Link> <span><i className="bi bi-arrow-right"></i></span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-12 col-lg-8">
-                            <div className="service-details-content">
-                                <h3>
-                                    Digital Marketing
-                                </h3>
-                                <p className="mb-4">
-                                    At tempus aenean sapien torquent sed diam className efficitur mus morbi eros dictum quam augue ac laor eet ligula libero mi commodo nibh hac fermentum orci ad pharetra consequat justo duis turpis lorem elit dui consectetur magnis lacinia odio per placerat vestibulum volutpat mauris mollis primis imperdiet posu ere ex enim gravida cras congue
-                                </p>
-                                <p className="mb-4">
-                                    pellentesque vulputate malesuada dictumst fames interdum cursus an te tellus porta ullamcorper accumsan non eu adipiscing integer venenatis sagittis arcu curae finibus ridi culus aliquam velit lobortis senectus vitae sollicitudin sit consectetuer ultricies rutrum parturient pede nisi nascetur habitant netus quisque elementum inceptos nam felis penatibus feugiat
-                                </p>
-                                <h3>
-                                    What We Provide
-                                </h3>
-                                <p className="mb-5">
-                                    At tempus aenean sapien torquent sed diam className efficitur mus morbi eros dictum quam augue ac laor eet ligula libero mi commodo nibh hac fermentum orci ad pharetra consequat justo duis turpis lorem elit dui consectetur magnis lacinia odio per placerat vestibulum volutpat mauris mollis primis imperdiet posu ere ex enim gravida cras congue
-                                </p>
-                                <div className="thumb">
-                                    <img src="/assets/img/service/details-2.jpg" alt="img" />
-                                </div>
-                                <h3>
-                                    The Challange
-                                </h3>
-                                <p>
-                                    At tempus aenean sapien torquent sed diam className efficitur mus morbi eros dictum quam augue ac laor eet ligula libero mi commodo nibh hac fermentum orci ad pharetra consequat justo duis turpis lorem elit dui consectetur magnis lacinia odio per placerat vestibulum volutpat mauris mollis primis imperdiet posu ere ex enim gravida cras congue
-                                </p>
-                                <div className="details-list-items">
-                                    <ul className="details-list">
-                                        <li><i className="bi bi-check-circle-fill"></i>Various analysis options.</li>
-                                        <li><i className="bi bi-check-circle-fill"></i>Advance Data analysis operation.</li>
-                                    </ul>
-                                    <ul className="details-list">
-                                        <li><i className="bi bi-check-circle-fill"></i>Page Load (time, size, number of requests).</li>
-                                        <li><i className="bi bi-check-circle-fill"></i>Advance Data analysis operation.</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    
+                        
+                        <div className=" col-lg-12">
+                        <div className="container">
+        <div className="service-details-wrapper">
+          <div className="col-lg-12">
+            <div className="service-details-content">
+              <h3>{service.title}</h3>
+              <p className="mb-4">{service.description1}</p>
+              <p className="mb-4">{service.description2}</p>
+              <h3>What We Provide</h3>
+              <p className="mb-5">{service.whatWeProvide}</p>
+              <div className="thumb">
+                <img src={service.image} alt="img" />
+              </div>
+              <h3>The Challenge</h3>
+              <p>{service.challenge}</p>
+              <div className="details-list-items">
+                <ul className="details-list">
+                  {service.listItems.slice(0, 2).map((item, index) => (
+                    <li key={index}>
+                      <i className="bi bi-check-circle-fill"></i> {item}
+                    </li>
+                  ))}
+                </ul>
+                <ul className="details-list">
+                  {service.listItems.slice(2).map((item, index) => (
+                    <li key={index}>
+                      <i className="bi bi-check-circle-fill"></i> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <Link to="/" className="text-blue-500">
+                Back to Services
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
                             <div className="faq-wrapper mt-5">
                                 <div className="faq-accordion-items">
                                     <div className="faq-accordion">
@@ -120,7 +174,6 @@ const ServiceDetails = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </section>

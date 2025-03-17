@@ -1,13 +1,10 @@
-import BreadCumb from "../Components/Common/BreadCumb";
+import HeroBanner4 from "../Components/HeroBanner/HeroBanner4";
 import ServiceDetails from "../Components/ServiceDetails/ServiceDetails";
 
 const ServiceDetailsPage = () => {
     return (
         <div>
-            <BreadCumb
-                bgimg="/assets/img/breadcrumb.jpg"
-                Title="Service Details"
-            ></BreadCumb>  
+            <HeroBanner4></HeroBanner4>  
             <ServiceDetails></ServiceDetails>       
         </div>
     );

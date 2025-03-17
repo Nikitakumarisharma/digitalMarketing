@@ -6,36 +6,7 @@ import { Link } from "react-router-dom";
 
 const About1 = () => {
 
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 2000,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        arrows: false,
-        swipeToSlide: true,
-        autoplay: true,
-        autoplaySpeed: 4000,        
-        responsive: [
-          {
-            breakpoint: 1399,
-            settings: {
-              slidesToShow: 4,
-            }
-          },
-          {
-            breakpoint: 1199,
-            settings: {
-              slidesToShow: 3,
-            }
-          },{
-            breakpoint: 575,
-            settings: {
-              slidesToShow: 2,
-            }
-          }
-        ]
-      };  
+
 
     useEffect(() => {
         loadBackgroudImages();
@@ -59,7 +30,7 @@ const About1 = () => {
 
 
     return (
-        <section className="about-section  " data-background={aboutContent.bg} >
+        <section className="about-section pt-5 " data-background={aboutContent.bg} >
         <div className="left-shape float-bob-y ">
             <img src="/assets/img/about/left-shape.png" alt="img" />
         </div>

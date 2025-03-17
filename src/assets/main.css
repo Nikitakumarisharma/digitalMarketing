@@ -77,6 +77,24 @@
 /* --------------------------------------------
     Template Default Fonts & Fonts Styles
  ---------------------------------------------- */
+ .cs-fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: black; /* Adjust background color */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* offer css */
+
+
+ /* offer end */
+
+
+
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 16px;
