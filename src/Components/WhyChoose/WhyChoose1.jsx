@@ -70,7 +70,7 @@ const WhyChoose1 = () => {
                                     </ul>
                                 </div>
                                 <div className="main-button wow fadeInUp" data-wow-delay=".5s">
-                                    <Link to="/team"> <span className="theme-btn"> EXPLORE MORE </span></Link>
+                                    <Link to="/Quotation"> <span className="theme-btn"> Get Quotation </span></Link>
                                 </div>
                             </div>
                         </div>

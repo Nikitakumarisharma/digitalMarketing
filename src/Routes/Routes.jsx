@@ -19,6 +19,7 @@ import CaseStudyDetailsPage from "../Pages/CaseStudyDetailsPage";
 import BlogRightSidebar from "../Pages/BlogRightSidebar";
 import BlogPage from "../Pages/BlogPage";
 import BlogDetailsPage from "../Pages/BlogDetailsPage";
+import GetCotetion from "../Pages/Quotation";
 
 export const router = createBrowserRouter([
     {
@@ -77,6 +78,10 @@ export const router = createBrowserRouter([
         {
           path: "/Pr",
           element:<Home2></Home2>,
+        }, 
+        {
+          path: "/Quotation",
+          element:<GetCotetion></GetCotetion>,
         }, 
         {
           path: "/blog/blog-details",

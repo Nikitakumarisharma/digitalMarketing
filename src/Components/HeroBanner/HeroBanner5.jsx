@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import loadBackgroudImages from "../Common/loadBackgroudImages";
-import Slider from "react-slick";
-import { Link } from "react-router-dom";
+
 
 const HeroBanner5 = () => {
 
@@ -14,9 +13,9 @@ const HeroBanner5 = () => {
           const heroContent = {
             bg:'/assets/img/hero/hero-bg-2.png',  
             subtitle:"Dedicated Professionals",
-            title:'Passionate, Skilled, and Committed Team',
-            content:'A team of passionate experts dedicated to innovation, collaboration, and delivering outstanding results every time.',
-            img:'/assets/img/hero/owner.png',    
+            title:'Expert, Reliable, and Results-Driven Services',
+            content:'We provide top-notch solutions tailored to your needs, ensuring quality, efficiency, and measurable success. Let us help you achieve your goals seamlessly',
+            img:'/assets/img/hero/service.png',    
             btnurl:'/about',             
           }
 
@@ -30,9 +29,6 @@ const HeroBanner5 = () => {
         </div>
         <div className="right-shape">
             <img src="/assets/img/hero/right-shape.png" alt="img" />
-        </div>
-        <div className="rocket-shape float-bob-y">
-            <img src="/assets/img/hero/rocket-2.png" alt="img" />
         </div>
         <div className="container-fluid">
             <div className="row g-4 justify-content-between align-items-center">

@@ -43,9 +43,9 @@ const HeroBanner1 = () => {
         <div className="arrow-shape-2">
             <img src="/assets/img/hero/arrow-shape.png" alt="img" />
         </div>
-        <div className="energy-shape float-bob-y">
+        {/* <div className="energy-shape float-bob-y">
             <img src="/assets/img/hero/energy-shape.png" alt="img" />
-        </div>
+        </div> */}
         <div className="rocket-shape">
             <img src="/assets/img/hero/rocket.png" alt="img" className="float-bob-y" />
         </div>

@@ -17,8 +17,8 @@ const HeroBanner2 = () => {
             title:'Latest Trends and Expert Insights',
             content:'Stay updated with insightful articles, expert opinions, and trending topics. Explore inspiring stories, industry insights, and practical tips to enhance your knowledge and stay ahead in your field.Let me know if you need any modifications! 🚀 ',
             img:'/assets/img/hero/hero-image-2.png',    
-            btnname:'EXPLORE MORE',             
-            btnurl:'/about',             
+            btnname:'Get Quotation',             
+            btnurl:'/Quotation',             
           }
 
     return (
