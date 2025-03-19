@@ -103,33 +103,75 @@ const SocialMediaMarketingForm = () => {
   // Generate PDF
   const generatePDF = () => {
     const doc = new jsPDF();
-    doc.setFont("helvetica", "normal"); // ✅ Ensure standard font is used
-    doc.setFontSize(20);
-    doc.text("Digital Marketing Services Quotation By CMTAI", 20, 20);
-    doc.setFontSize(12);
-    doc.text(`Date: ${new Date().toLocaleDateString()}`, 20, 30);
-    doc.text(`Name: ${name}`, 20, 40);
-    doc.text(`Contact: ${contact}`, 20, 50);
+    doc.setFont("helvetica", "normal");
 
-    // Format table data correctly
-    const tableData = quotationDetails.map((item) => [
-        item.service,
-        item.quantity,
-        ` ${item.price.toLocaleString("en-IN")}` // ✅ Proper number formatting
-    ]);
+    // Use direct URL of your logo (Ensure it's PNG/JPG, not SVG)
+    const logoURL = "https://www.cmtai.live/assets/img/logo/logo-dark.png"; // Replace with actual logo path
+    const imgWidth = 50;  
+    const imgHeight = 20;  
 
-    // Fix table headers to avoid extra "1" in price
-    autoTable(doc, {
-        startY: 60,
-        head: [["Service", "Quantity", "Price"]], 
-        body: tableData,
-        foot: [["Total Amount", "", ` ${totalAmount.toLocaleString("en-IN")}`]], // ✅ Format total amount
-        theme: "grid", // ✅ Ensures proper table formatting
-        styles: { fontSize: 10 }, // ✅ Fix font size issue
-    });
+    const image = new Image();
+    image.crossOrigin = "anonymous"; // Allow cross-origin access
+    image.src = logoURL;
+    
+    image.onload = function () {
+        doc.addImage(image, "PNG", 20, 10, imgWidth, imgHeight); // Add the logo when loaded
 
-    doc.save("quotation.pdf");
+        // Company Information
+        doc.setTextColor(0, 0, 0);
+        doc.setFontSize(12);
+        doc.setFont("helvetica", "bold");
+        doc.text("Completrix MicroTechnologies Pvt Ltd", 20, 35);
+        doc.setFont("helvetica", "normal");
+        doc.text("E-23 Lower Ground Floor, Sector-3.", 20, 42);
+        doc.text("Noida Uttar Pradesh", 20, 49);
+        doc.text("201301", 20, 56);
+        doc.text("+919818234884", 20, 63);
+
+        // Recipient Information
+        doc.setFont("helvetica", "bold");
+        doc.text("To", 150, 35);
+        doc.setFont("helvetica", "normal");
+        doc.text(`Name: ${name}`, 150, 42);
+        doc.text(`Contact: ${contact}`, 150, 49);
+
+        // Unique PRO ID with "Digital Marketing Services" and Date
+        const uniqueId = `PRO-${Math.floor(100000 + Math.random() * 900000)}`;
+        const currentDate = new Date().toLocaleDateString();
+
+        doc.setFontSize(12);
+        doc.setFont("helvetica", "bold");
+        doc.text(`# ${uniqueId}`, 20, 75);
+        doc.setFont("helvetica", "normal");
+        doc.text("Digital Marketing Services", 20, 82);
+        doc.text(`Date: ${currentDate}`, 20, 89);
+
+        // Format table data correctly
+        const tableData = quotationDetails.map((item) => [
+            item.service,
+            item.quantity,
+            ` ${item.price.toLocaleString("en-IN")}`
+        ]);
+
+        // Pricing Table
+        autoTable(doc, {
+            startY: 100,
+            head: [["Service", "Quantity", "Price"]],
+            body: tableData,
+            foot: [["Total Amount", "", ` ${totalAmount.toLocaleString("en-IN")}`]],
+            theme: "grid",
+            styles: { fontSize: 10 },
+        });
+
+        doc.save("quotation.pdf");
+    };
+
+    image.onerror = function () {
+        console.error("Error loading logo image. Check the URL.");
+    };
 };
+
+
 
 
   // Handle Final Submission

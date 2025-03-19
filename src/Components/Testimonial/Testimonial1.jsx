@@ -81,7 +81,7 @@ const Testimonial1 = () => {
                         <div className="col-xl-2 col-lg-4">
                             <div className="testimonial-left wow fadeInUp" data-wow-delay=".3s">
                                 <div className="client-img">
-                                    <img src="/assets/img/logo/logo dark.svg" alt="img" style={{height:"20px"}} />
+                                    <img src="/assets/img/logo/logo-dark.png" alt="img" style={{height:"20px"}} />
                                     <div className="content">
                                         <div className="star">
                                         <i className="bi bi-star-fill"></i>
