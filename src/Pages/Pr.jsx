@@ -20,7 +20,6 @@ const Home2 = () => {
         <div>
             <HeroBanner2></HeroBanner2>
             <Services></Services>
-
             <WhatWeDo2></WhatWeDo2>
             <Counter1></Counter1>
             {/* <Services1></Services1> */}

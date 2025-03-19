@@ -78,7 +78,7 @@ const About2 = ({addclass}) => {
                                 </div>
                                 <div className="about-button">
                                     <div className="main-button wow fadeInUp" data-wow-delay=".3s">
-                                        <Link to="/Quotation"> <span className="theme-btn">Get Quotation </span></Link>
+                                        <Link to="/contact"> <span className="theme-btn">Contact </span></Link>
                                     </div>
                                     
                                 </div>

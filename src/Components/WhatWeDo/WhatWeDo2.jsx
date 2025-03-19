@@ -22,7 +22,7 @@ const WhatWeDo2 = () => {
           }, []);
 
     return (
-        <section className="feature-secton section-padding fix">
+        <section className="feature-secton py-4 fix">
             <div className="bg-shape">
                 <img src="/assets/img/bg-shape-2.png" alt="img" />
             </div>

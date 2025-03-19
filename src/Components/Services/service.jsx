@@ -36,7 +36,9 @@ const words = [
   },
   { text: "Video Ads (YouTube)", icon: <FaYoutube />
   },
-  { text: "Social Media Ads", icon: <MdOutlineSocialDistance /> },
+  { text: "Social Media Ads", icon: <MdOutlineSocialDistance />
+   },
+
   { text: "Shopping Ads", icon: <FaCartShopping />
   },
   { text: "Promotional Videos", icon: <FaRankingStar />

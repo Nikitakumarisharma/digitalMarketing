@@ -1,103 +1,87 @@
-import React from 'react';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import React from "react";
+import { MdContentPasteSearch ,MdScreenSearchDesktop,MdOutlineSocialDistance,MdAnimation,MdOutlineMissedVideoCall    } from "react-icons/md";
+import { TfiWrite } from "react-icons/tfi";
+import { TbBinaryTree2 } from "react-icons/tb";
+import { FaMobileScreenButton,FaPeopleRobbery, FaCartShopping ,FaRankingStar   } from "react-icons/fa6";
+import { FaInstagram ,FaGoogle, FaYoutube,FaMagic ,FaIdCardAlt   } from "react-icons/fa";
+import { PiFlagBannerFoldDuotone } from "react-icons/pi";
+import { BsPostcardHeart } from "react-icons/bs";
 
-const textItems = [
-  "Political PR",
-  "AI-Powered PR Solutions",
-  "Content PR",
-  "Event PR & Promotions",
-  "Political PR",
-  "Celebrity & Influencer PR",
-  "Personal Branding",
-  "Media Relations & Publicity",
-  "Crisis Communication",
-  "Reputation Management",
-  "Social Media & Digital PR",
-  "Corporate PR",
-  "Celebrity & Influencer PR",
+
+
+const words = [
+  { text:"Political PR",icon: <MdContentPasteSearch />
+  },
+  { text: "AI-Powered PR Solutions", icon: <MdScreenSearchDesktop />
+  },
+  { text: "Content PR", icon: <FaMobileScreenButton />
+  },
+  { text: "Event PR & Promotions", icon: <FaPeopleRobbery />
+  }, 
+  { text: "Political PR", icon:<BsPostcardHeart />
+  },
+  { text: "Celebrity & Influencer PR", icon: <FaInstagram />
+  },
+  { text: "Personal Branding", icon: <TbBinaryTree2 />
+  },
+  { text: "Media Relations & Publicity", icon: <TfiWrite />
+  },
+  { text: "Crisis Communication", icon: <FaGoogle />
+  },
+  { text:  "Reputation Management", icon: <PiFlagBannerFoldDuotone />
+  },
+  { text: "Social Media & Digital PR", icon: <FaYoutube />
+  },
+  { text: "Corporate PR", icon: <MdOutlineSocialDistance />
+   },
+
+  { text: "Celebrity & Influencer PR", icon: <FaCartShopping />
+  },
+  
   
 ];
 
-const sliderSettings = {
-  slidesToShow: 7,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 400,
-  arrows: false,
-  dots: false,
-  pauseOnHover: true,
-  infinite: true,
-  centerMode: false,
-  responsive: [
-    {
-      breakpoint: 900,
-      settings: {
-        slidesToShow: 4,
-      },
-    },
-    {
-      breakpoint: 1150,
-      settings: {
-        slidesToShow: 5,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 3,
-      },
-    },
-    {
-      breakpoint: 520,
-      settings: {
-        slidesToShow: 2,
-      },
-    },
-  ],
-};
-
-const Client = () => {
+const FoodGrid = () => {
   return (
-    <section className="container text-center pt-5 mx-auto">
-      <div className="section-title text-center">
-                <div className="sub-title wow fadeInUp">
-                    <span>PR Services</span>
-                </div>
-                <h2 className="wow fadeInUp" data-wow-delay=".3s">
-                Elevate Your Brand with Expert<br/>
-                PR Solutions
-                </h2>
-            </div>
-      <hr />
-      <Slider {...sliderSettings} className="customer-logos slider">
-        {textItems.map((text, index) => (
-          <div key={index} className="slide py-4">
-            <div 
-              className="text-slide mx-auto flex items-center justify-center "
-              style={{
-                height: "100px",
-                width: "150px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                // background: "#f3f3f3",
-                borderRadius: "10px",
-                fontSize: "18px",
-                fontWeight: "bold",
-                color: "#6A47ED",
-                boxShadow: "0 2px 4px rgba(0,0,0,0.2)"
-              }}
-            >
-              {text}
-            </div>
+    <div style={{ maxWidth: "1600px", margin: "auto", padding: "10px", paddingBottom: "50px"}}>
+      <h2 style={{ 
+  fontSize: "28px", 
+  fontWeight: "bold", 
+  marginBottom: "20px", 
+  color: "#6A47ED", 
+  textAlign: "center", 
+  width: "100%",
+  marginTop:"20px", 
+}}>
+  Services We Provide
+</h2>
+
+      <div style={{ 
+        display: "flex", 
+        flexWrap: "wrap", 
+        gap: "20px", 
+        justifyContent: "center", 
+        textAlign: "center" 
+      }}>
+        {words.map((item, index) => (
+          <div key={index} style={{ 
+            display: "inline-flex", 
+            alignItems: "center", 
+            justifyContent: "center", 
+            padding: "15px", 
+            border: "1px solid #ddd", 
+            borderRadius: "28px", 
+            boxShadow: "2px 2px 10px rgba(0,0,0,0.1)", 
+            backgroundColor: "#fff",
+            whiteSpace: "nowrap" 
+          }}>
+            <span style={{ fontSize: "24px", marginRight: "10px", color: "#6A47ED" }}>{item.icon}</span>
+            <span style={{ fontWeight: "bold ",fontSize:"14px" }}>{item.text}</span>
           </div>
         ))}
-      </Slider>
-      <hr />
-    </section>
+      </div>
+    </div>
   );
 };
 
-export default Client;
+export default FoodGrid;

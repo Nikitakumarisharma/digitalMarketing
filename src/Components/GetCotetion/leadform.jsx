@@ -8,11 +8,11 @@ import autoTable from "jspdf-autotable"; // Import autoTable separately
 import { MdOutlineSocialDistance } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaYoutube
+  ,} from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
-
-
-
+import { MdPersonSearch } from "react-icons/md";
+import { TbDeviceMobileSearch } from "react-icons/tb";
 
 
 
@@ -149,16 +149,6 @@ const SocialMediaMarketingForm = () => {
       alert("Please enter a valid 10-digit phone number.");
       return;
     }
-    // Save contact data to Firebase
-    try {
-      await addDoc(collection(db, "digitalMarketLeadContact"), {
-        name,
-        contact,
-        timestamp: new Date(),
-      });
-    } catch (error) {
-      console.error("Error saving contact:", error);
-    }
 
     // Calculate total and prepare quotation details
     let details = [];
@@ -262,22 +252,24 @@ const SocialMediaMarketingForm = () => {
 
     // SEM section
     if (adBudget > 0) {
-      const commission = calculateSEMCommission(adBudget);
+      const metaCommission = calculateSEMCommission(adBudget);
       details.push({
         service: "Meta Ads Commission",
-        quantity: "Based on budget",
-        price: commission,
+        quantity: `Budget: ${adBudget}`,
+        price: metaCommission,
       });
-      total += commission;
+      total += metaCommission;
     }
-    if (GoogleBudget> 0) {
-      const commission = calculateSEMCommission(GoogleBudget);
+
+    // Google Ads section with fixed calculation
+    if (GoogleBudget > 0) {
+      const googleCommission = calculateSEMCommission(GoogleBudget);
       details.push({
         service: "Google Ads Commission",
-        quantity: "Based on budget",
-        price: commission,
+        quantity: `Budget: ${GoogleBudget}`,
+        price: googleCommission,
       });
-      total += commission;
+      total += googleCommission;
     }
 
     // SEO section
@@ -302,10 +294,57 @@ const SocialMediaMarketingForm = () => {
       total += seoPrice;
     }
 
+    // Update state with calculated values
     setQuotationDetails(details);
     setTotalAmount(total);
-    setShowModal(false);
-    setShowQuotationModal(true);
+
+    // Save all data to Firebase after calculations
+    try {
+      await addDoc(collection(db, "digitalMarketLeadContact"), {
+        // Basic Info
+        name,
+        contact,
+        timestamp: new Date(),
+        email,
+        
+        // SMM Section
+        metaPosts,
+        infographicReels,
+        regularReels,
+        aiVoiceoverReels,
+        humanVoiceoverReels,
+        
+        // LinkedIn Section
+        blogPosts,
+        explainerVideos,
+        newsletters,
+        
+        // Google My Business Section
+        gmbPosts,
+        
+        // YouTube Section
+        shortVideos,
+        longVideos,
+        
+        // SEM Section
+        adBudget,
+        GoogleBudget,
+        
+        // SEO Section
+        seoPackage,
+        
+        // Calculated Values
+        totalAmount: total,
+        quotationDetails: details,
+      });
+
+      // Close modal and show quotation
+      setShowModal(false);
+      setShowQuotationModal(true);
+    } catch (error) {
+      console.error("Error saving contact:", error);
+      alert("Error saving your quotation. Please try again.");
+    }
   };
 
   return (
@@ -461,7 +500,8 @@ const SocialMediaMarketingForm = () => {
 
               {/* YouTube Subsection */}
               <div className="subsection mb-4">
-  <h4 className="mb-3">YouTube</h4>
+  <h4 className="mb-3"><FaYoutube />&nbsp;
+  YouTube</h4>
   <div className="row d-flex align-items-center">
     
     {/* Video Upto 5 min */}
@@ -500,14 +540,16 @@ const SocialMediaMarketingForm = () => {
   <div className="card shadow">
     <div className="card-body">
       <h3 className="card-title text-center mb-4" style={{color:"#6A47ED"}}>
-        SEM
+      <MdPersonSearch />&nbsp;
+      SEM
       </h3>
 
       <div className="row d-flex align-items-center">
 
         {/* Meta Ad Budget */}
         <div className="col-md-6 d-flex justify-content-between align-items-center">
-          <label className="form-label m-0">Enter Your Meta Ad Budget</label>
+          <label className="form-label m-0">
+          Enter Your Meta Ad Budget</label>
           <input
             type="number"
             className="form-control w-50"
@@ -519,7 +561,8 @@ const SocialMediaMarketingForm = () => {
 
         {/* Google Ad Budget */}
         <div className="col-md-6 d-flex justify-content-between align-items-center">
-          <label className="form-label m-0">Enter Your Google Ad Budget</label>
+          <label className="form-label m-0">
+          Enter Your Google Ad Budget</label>
           <input
             type="number"
             className="form-control w-50"
@@ -540,7 +583,8 @@ const SocialMediaMarketingForm = () => {
         <div className="col-md-6 mb-4">
           <div className="card shadow">
             <div className="card-body">
-              <h3 className="card-title text-center mb-4" style={{color:"#6A47ED"}}>SEO Packages</h3>
+              <h3 className="card-title text-center mb-4" style={{color:"#6A47ED"}}><TbDeviceMobileSearch />&nbsp;
+              SEO Packages</h3>
 
               <div className="mb-3">
                 {/* Add Label for SEO selection */}
@@ -552,7 +596,7 @@ const SocialMediaMarketingForm = () => {
                   value={seoPackage}
                   onChange={(e) => setSeoPackage(e.target.value)}
                 >
-                  <option value="basic">--Select SEO Package--</option>
+                  <option value="">--Select SEO Package--</option>
                   <option value="basic">Basic SEO (5000₹)</option>
                   <option value="advanced">Advanced SEO(10000₹)</option>
                   <option value="enterprise">Enterprise SEO(50000₹)</option>

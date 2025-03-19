@@ -22,7 +22,7 @@ const HeroBanner2 = () => {
           }
 
     return (
-        <section className="hero-section hero-2" data-background={heroContent.bg}>
+        <section className="hero-section hero-2 " data-background={heroContent.bg}>
         <div className="trophy-shape">
             <img src="/assets/img/hero/trophy-shape.png" alt="img" />
         </div>
