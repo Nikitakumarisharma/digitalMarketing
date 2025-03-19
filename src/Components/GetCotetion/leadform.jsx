@@ -108,7 +108,7 @@ const SocialMediaMarketingForm = () => {
     // Use direct URL of your logo (Ensure it's PNG/JPG, not SVG)
     const logoURL = "https://www.cmtai.live/assets/img/logo/logo-dark.png"; // Replace with actual logo path
     const imgWidth = 50;  
-    const imgHeight = 20;  
+    const imgHeight = 14;  
 
     const image = new Image();
     image.crossOrigin = "anonymous"; // Allow cross-origin access
@@ -297,7 +297,7 @@ const SocialMediaMarketingForm = () => {
       const metaCommission = calculateSEMCommission(adBudget);
       details.push({
         service: "Meta Ads Commission",
-        quantity: `Budget: ${adBudget}`,
+        quantity: `As Per Budget`,
         price: metaCommission,
       });
       total += metaCommission;
@@ -308,7 +308,7 @@ const SocialMediaMarketingForm = () => {
       const googleCommission = calculateSEMCommission(GoogleBudget);
       details.push({
         service: "Google Ads Commission",
-        quantity: `Budget: ${GoogleBudget}`,
+        quantity: `As Per Budget`,
         price: googleCommission,
       });
       total += googleCommission;
