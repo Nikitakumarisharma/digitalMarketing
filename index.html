@@ -113,12 +113,25 @@
 
     <script type="module" src="/src/main.jsx"></script>
     <!-- Chatbot Button Script -->
-    <script
-      src="https://www.myaibot.in/Modules/Chatbot/Resources/assets/js/chatbot-widget.min.js"
-      data-iframe-src="https://www.myaibot.in/chatbot/embed/chatbot_code=d328feca1e6e41c/welcome"
-      data-iframe-height="532"
-      data-iframe-width="400"
-    ></script>
+    <script>
+      function isMobileDevice() {
+        return window.innerWidth <= 768; // Adjust breakpoint as needed
+      }
+    
+      if (isMobileDevice()) {
+        // Open chatbot in a new tab on mobile
+        window.location.href = "https://www.myaibot.in/chatbot/embed/chatbot_code=d328feca1e6e41c/welcome";
+      } else {
+        // Load chatbot iframe in the same tab for laptops
+        var script = document.createElement("script");
+        script.src = "https://www.myaibot.in/Modules/Chatbot/Resources/assets/js/chatbot-widget.min.js";
+        script.setAttribute("data-iframe-src", "https://www.myaibot.in/chatbot/embed/chatbot_code=d328feca1e6e41c/welcome");
+        script.setAttribute("data-iframe-height", "532");
+        script.setAttribute("data-iframe-width", "400");
+        document.body.appendChild(script);
+      }
+    </script>
+    
     <!-- chatbot end here -->
 
 
