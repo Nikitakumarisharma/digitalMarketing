@@ -11,7 +11,7 @@
 
     <meta
       name="description"
-      content="Looking for the best digital marketing company in Noida to elevate your brand’s online presence? We are a top PR agency in Noida, offering a full suite of digital marketing services, including SEO services, PPC services, social media marketing, and public relations. As a trusted digital marketing agency in Noida, we specialize in data-driven strategies that enhance brand visibility, drive engagement, and generate leads. Whether you need expert public relations services in Noida or a high-performance social media marketing agency in Noida, we provide tailored solutions to help businesses grow and succeed in the competitive digital landscape. Let us take your marketing to the next level!"
+      content="Looking for the best digital marketing company in Noida to elevate your brand's online presence? We are a top PR agency in Noida, offering a full suite of digital marketing services, including SEO services, PPC services, social media marketing, and public relations. As a trusted digital marketing agency in Noida, we specialize in data-driven strategies that enhance brand visibility, drive engagement, and generate leads. Whether you need expert public relations services in Noida or a high-performance social media marketing agency in Noida, we provide tailored solutions to help businesses grow and succeed in the competitive digital landscape. Let us take your marketing to the next level!"
     />
 
     <link rel="canonical" href="https://www.cmtai.live" />
@@ -22,7 +22,7 @@
     />
     <meta
       property="og:description"
-      content="Looking for the best digital marketing company in Noida to elevate your brand’s online presence? We are a top PR agency in Noida, offering a full suite of digital marketing services, including SEO services, PPC services, social media marketing, and public relations. As a trusted digital marketing agency in Noida, we specialize in data-driven strategies that enhance brand visibility, drive engagement, and generate leads. Whether you need expert public relations services in Noida or a high-performance social media marketing agency in Noida, we provide tailored solutions to help businesses grow and succeed in the competitive digital landscape. Let us take your marketing to the next level!"
+      content="Looking for the best digital marketing company in Noida to elevate your brand's online presence? We are a top PR agency in Noida, offering a full suite of digital marketing services, including SEO services, PPC services, social media marketing, and public relations. As a trusted digital marketing agency in Noida, we specialize in data-driven strategies that enhance brand visibility, drive engagement, and generate leads. Whether you need expert public relations services in Noida or a high-performance social media marketing agency in Noida, we provide tailored solutions to help businesses grow and succeed in the competitive digital landscape. Let us take your marketing to the next level!"
     />
     <meta property="og:url" content="https://www.cmtai.live" />
     <meta property="og:site_name" content="CMT AI" />
@@ -46,7 +46,7 @@
     />
     <meta
       name="twitter:description"
-      content="Looking for the best digital marketing company in Noida to elevate your brand’s online presence? We are a top PR agency in Noida, offering a full suite of digital marketing services, including SEO services, PPC services, social media marketing, and public relations. As a trusted digital marketing agency in Noida, we specialize in data-driven strategies that enhance brand visibility, drive engagement, and generate leads. Whether you need expert public relations services in Noida or a high-performance social media marketing agency in Noida, we provide tailored solutions to help businesses grow and succeed in the competitive digital landscape. Let us take your marketing to the next level!"
+      content="Looking for the best digital marketing company in Noida to elevate your brand's online presence? We are a top PR agency in Noida, offering a full suite of digital marketing services, including SEO services, PPC services, social media marketing, and public relations. As a trusted digital marketing agency in Noida, we specialize in data-driven strategies that enhance brand visibility, drive engagement, and generate leads. Whether you need expert public relations services in Noida or a high-performance social media marketing agency in Noida, we provide tailored solutions to help businesses grow and succeed in the competitive digital landscape. Let us take your marketing to the next level!"
     />
 
     <meta
@@ -107,24 +107,90 @@
   src="https://www.facebook.com/tr?id=1365935591275331&ev=PageView&noscript=1"
   /></script>
   <!-- End Meta Pixel Code -->
+
   </head>
   <body>
     <div id="root"></div>
 
     <script type="module" src="/src/main.jsx"></script>
-    <!-- Chatbot Button Script -->
-    <script
-      src="https://www.myaibot.in/Modules/Chatbot/Resources/assets/js/chatbot-widget.min.js"
-      data-iframe-src="https://www.myaibot.in/chatbot/embed/chatbot_code=d328feca1e6e41c/welcome"
-      data-iframe-height="532"
-      data-iframe-width="400"
-    ></script>
-    <!-- chatbot end here -->
 
+    <!-- Chatbot Script with Mobile Detection -->
+    <script>
+      function cleanupExistingChatbot() {
+        // Remove any existing chatbot elements
+        const existingScript = document.querySelector('script[src*="chatbot-widget.min.js"]');
+        if (existingScript) existingScript.remove();
+        
+        const existingButton = document.querySelector('button[data-chatbot="true"]');
+        if (existingButton) existingButton.remove();
+        
+        // Remove the iframe and its container
+        const existingIframe = document.querySelector('iframe[src*="myaibot"]');
+        if (existingIframe) existingIframe.parentElement.remove();
+        
+        // Remove any leftover chatbot containers
+        const chatbotContainers = document.querySelectorAll('.chatbot-widget-container');
+        chatbotContainers.forEach(container => container.remove());
+      }
 
+      function initializeChatbot() {
+        // Clean up first
+        cleanupExistingChatbot();
+        
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+          // Create mobile chat button
+          const chatButton = document.createElement('button');
+          chatButton.innerHTML = 'Chat';
+          chatButton.setAttribute('data-chatbot', 'true');
+          chatButton.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #49A027;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+          `;
+          
+          chatButton.onclick = function() {
+            window.open('https://www.myaibot.in/chatbot/embed/chatbot_code=d328feca1e6e41c/welcome', 
+              '_blank', 
+              'width=400,height=532'
+            );
+          };
+          
+          document.body.appendChild(chatButton);
+        } else {
+          // Desktop version - use original chatbot widget
+          const script = document.createElement('script');
+          script.src = "https://www.myaibot.in/Modules/Chatbot/Resources/assets/js/chatbot-widget.min.js";
+          script.setAttribute("data-iframe-src", "https://www.myaibot.in/chatbot/embed/chatbot_code=d328feca1e6e41c/welcome");
+          script.setAttribute("data-iframe-height", "532");
+          script.setAttribute("data-iframe-width", "400");
+          document.body.appendChild(script);
+        }
+      }
+
+      // Initialize on load with a slight delay to ensure proper cleanup
+      window.addEventListener('load', function() {
+        setTimeout(initializeChatbot, 1000);
+      });
+
+      // Re-initialize on resize with debounce
+      let resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initializeChatbot, 250);
+      });
+    </script>
 
     <!-- google analytics -->
-    <!-- index.html -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-71GZDBQL72"
@@ -137,6 +203,7 @@
       gtag("js", new Date());
       gtag("config", "G-71GZDBQL72");
     </script>
+    <!-- google analytics end here -->
 
   </body>
 </html>
